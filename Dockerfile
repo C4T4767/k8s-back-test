@@ -22,7 +22,7 @@ ENV NAVER_CLIENT_SECRET=${NAVER_CLIENT_SECRET}
 ENV JWT_SECRET=${JWT_SECRET}
 
 # 🔹 Config 파일 복사
-COPY src/main/resources/application.yaml ./config/application.yaml
+COPY src/main/resources/application.yml ./config/application.yml
 
 # 🔹 빌드된 jar 복사
 COPY --from=build /app/build/libs/*.jar app.jar
@@ -30,4 +30,4 @@ COPY --from=build /app/build/libs/*.jar app.jar
 EXPOSE 8080
 
 # 🔹 config 경로 지정해서 실행
-ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=file:./config/application.yaml"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=file:./config/application.yml"]
