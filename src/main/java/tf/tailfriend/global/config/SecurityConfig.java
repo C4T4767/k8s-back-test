@@ -59,7 +59,7 @@ public class SecurityConfig {
                     .requestMatchers("/login").permitAll()
                     // admin API
                     .requestMatchers("/admin").permitAll()
-                    .requestMatchers("/admin/login").permitAll()
+                    .requestMatchers("/admin/login","/petsta").permitAll()
                     .requestMatchers("/admin/**").hasRole("ADMIN")
                     // 나머지 API 권한 설정
                     .anyRequest().authenticated()
