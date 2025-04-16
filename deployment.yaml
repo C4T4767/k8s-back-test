@@ -17,6 +17,11 @@ spec:
         image: s9kpv31a.kr.private-ncr.ntruss.com/tailfriends/tailfriends-back:__TAG__
         ports:
         - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: tailfriend-config  # ConfigMap을 사용하여 환경 변수 주입
+        - secretRef:
+            name: tailfriend-secret  # Secret을 사용하여 환경 변수 주입
       imagePullSecrets:
       - name: regcred
 ---
