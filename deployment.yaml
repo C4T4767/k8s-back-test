@@ -19,9 +19,9 @@ spec:
         - containerPort: 8080
         envFrom:
         - configMapRef:
-            name: tailfriend-config
+            name: tailfriends-config
         - secretRef:
-            name: tailfriend-secret
+            name: tailfriends-secret
       imagePullSecrets:
       - name: regcred
 ---
