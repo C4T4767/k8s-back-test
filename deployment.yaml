@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: tailfriends-back
-        image: s9kpv31a.kr.private-ncr.ntruss.com/tailfriends/tailfriends-back:latest
+        image: tailfriends-cr.kr.ncr.ntruss.com/tailfriends/tailfriends-back:__TAG__
         ports:
         - containerPort: 8080
       imagePullSecrets:
