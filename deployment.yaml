@@ -17,11 +17,6 @@ spec:
           image: s9kpv31a.kr.private-ncr.ntruss.com/tailfriends/tailfriends-back:__TAG__
           ports:
             - containerPort: 8080
-          envFrom:
-            - configMapRef:
-                name: tailfriends-config
-            - secretRef:
-                name: tailfriends-secret
       imagePullSecrets:
         - name: regcred
 ---
