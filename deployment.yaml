@@ -17,10 +17,6 @@ spec:
           image: s9kpv31a.kr.private-ncr.ntruss.com/tailfriends/tailfriends-back:__TAG__
           ports:
             - containerPort: 8080
-          volumeMounts:
-            - name: config-volume
-              mountPath: /app/config/application.yml
-              subPath: application.yml
           envFrom:
             - configMapRef:
                 name: tailfriends-config
@@ -28,10 +24,6 @@ spec:
                 name: tailfriends-secret
       imagePullSecrets:
         - name: regcred
-      volumes:
-        - name: config-volume
-          configMap:
-            name: tailfriends-config-yml
 ---
 apiVersion: v1
 kind: Service
