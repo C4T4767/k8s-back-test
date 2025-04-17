@@ -43,9 +43,12 @@ dependencies {
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 }
 
-processResources {
-    exclude 'application.yml'
+tasks.named('processResources') {
+    if (project.hasProperty('excludeYml') && project.property('excludeYml') == 'true') {
+        exclude('application.yml')
+    }
 }
+
 
 
 tasks.named('test') {
