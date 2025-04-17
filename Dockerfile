@@ -22,4 +22,5 @@ COPY --from=build /app/build/libs/*.jar app.jar
 EXPOSE 8080
 
 # 실행
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=file:/app/config/application.yml"]
+
